@@ -30,7 +30,7 @@ def test_solver_output_and_feasibility(network_data):
         pytest.skip(str(exc))
     assert result.termination_condition == "optimal"
     assert result.objective_value is not None and result.objective_value > 0
-    assert result.solver_name in {"gurobi", "scip"}
+    assert result.solver_name in {"gurobi", "scip", "highs"}
 
     shipped_by_wh = result.shipments.groupby("warehouse_id")["quantity"].sum()
     for row in result.warehouses.itertuples():
