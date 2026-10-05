@@ -163,6 +163,18 @@ def solver_status_label(termination_condition: str) -> tuple[str, str]:
     return "WARNING", "red"
 
 
+def solver_display_name(name: str) -> str:
+    """Return a portfolio-friendly solver label."""
+    normalized = str(name).lower()
+    if normalized in {"highs", "appsi_highs"}:
+        return "HiGHS"
+    if normalized == "gurobi":
+        return "Gurobi"
+    if normalized == "scip":
+        return "SCIP"
+    return str(name)
+
+
 def average_active_utilization(result: object) -> float:
     """Return average utilization across active warehouses for display."""
     active = result.warehouses.loc[result.warehouses["active"] > 0.5]
@@ -972,7 +984,7 @@ st.markdown(
         <p class="scx-hero-description">A command center for optimizing multi-warehouse distribution decisions, testing operational shocks, and translating modeled responses into executive action.</p>
         <div class="scx-status-grid">
             <div class="scx-status-cell"><span>Network status</span><strong>{network_state}</strong></div>
-            <div class="scx-status-cell"><span>Solver</span><strong>{escape(result.solver_name.upper())}</strong></div>
+            <div class="scx-status-cell"><span>Solver</span><strong>{escape(solver_display_name(result.solver_name))}</strong></div>
             <div class="scx-status-cell"><span>Last run</span><strong>{last_run_display}</strong></div>
             <div class="scx-status-cell"><span>Service</span><strong>{metrics['service_level']:.1%}</strong></div>
             <div class="scx-status-cell"><span>Risk</span><strong>{risk_label}</strong></div>
@@ -990,7 +1002,7 @@ if run_completed:
     st.markdown(
         f"""
         <div class="scx-run-complete"><div><strong>Optimization Complete</strong><br>Recommended distribution plan generated successfully.</div>
-        <div>Solver · {escape(result.solver_name.upper())} &nbsp;|&nbsp; Termination · {escape(str(result.termination_condition).upper())} &nbsp;|&nbsp; Objective · {escape(money(metrics['total_cost']))}</div></div>
+        <div>Solver · {escape(solver_display_name(result.solver_name))} &nbsp;|&nbsp; Termination · {escape(str(result.termination_condition).upper())} &nbsp;|&nbsp; Objective · {escape(money(metrics['total_cost']))}</div></div>
         """,
         unsafe_allow_html=True,
     )
@@ -1036,7 +1048,7 @@ kpi_rows = [
         ),
         (
             "Solver used",
-            result.solver_name.upper(),
+            solver_display_name(result.solver_name),
             f"Exact MILP · {status_label.lower()} termination",
             "teal",
         ),
@@ -1960,7 +1972,7 @@ with tab_econometrics:
 st.markdown(
     """
     <footer class="scx-footer">
-        <div><strong>SupplyChainX</strong> · Operations Research &amp; Decision Analytics<br>Built by Sayak Pranab Ghosh</div>
+        <div><strong>SupplyChainX</strong> · Operations Research &amp; Decision Analytics<br>Built by Sayak Pranab Ghosh · <a href="https://github.com/sayakdoms/SupplyChainX" target="_blank">GitHub</a> · <a href="https://supplychainx-optimization.streamlit.app/" target="_blank">Live Demo</a></div>
         <div>Pyomo · Gurobi · SCIP · HiGHS · Streamlit · Statsmodels</div>
     </footer>
     """,
