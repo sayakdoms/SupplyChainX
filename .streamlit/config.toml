@@ -1,0 +1,47 @@
+[theme]
+base = "dark"
+primaryColor = "#0F766E"
+backgroundColor = "#07101B"
+secondaryBackgroundColor = "#0F1B2B"
+codeBackgroundColor = "#091522"
+textColor = "#E5EEF7"
+linkColor = "#22D3EE"
+borderColor = "#30455B"
+codeTextColor = "#CBD5E1"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "10px"
+buttonRadius = "8px"
+
+font = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+baseFontSize = 14
+baseFontWeight = 400
+codeFontSize = "13px"
+headingFontSizes = ["30px", "22px", "18px", "16px", "14px", "12px"]
+headingFontWeights = [700, 600, 600, 600, 500, 500]
+linkUnderline = false
+
+greenColor = "#2DD4BF"
+redColor = "#F87171"
+yellowColor = "#FBBF24"
+orangeColor = "#FB923C"
+blueColor = "#22D3EE"
+violetColor = "#818CF8"
+grayColor = "#94A3B8"
+
+chartCategoricalColors = ["#22D3EE", "#2DD4BF", "#64748B", "#94A3B8", "#F87171"]
+chartSequentialColors = ["#08131F", "#0B2230", "#0E3544", "#115066", "#146B7D", "#16879A", "#1AA3B7", "#22B8CB", "#2DD4BF", "#67E8F9"]
+
+dataframeBorderColor = "#30455B"
+dataframeHeaderBackgroundColor = "#122238"
+dataframeHeaderTextColor = "#E5EEF7"
+
+[theme.sidebar]
+backgroundColor = "#0A1421"
+secondaryBackgroundColor = "#102035"
+codeBackgroundColor = "#07101B"
+textColor = "#E5EEF7"
+borderColor = "#30455B"
+primaryColor = "#0F766E"

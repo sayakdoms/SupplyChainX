@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.streamlit/secrets.toml
+results/*.csv
+results/*.json
+!results/econometric_scenarios.csv
+!results/.gitkeep
+

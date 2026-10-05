@@ -1,0 +1,16 @@
+warehouse_id,warehouse_name,capacity,fixed_cost,latitude,longitude
+WH01,Regional Distribution Centre 1,2069,167536,14.18097,84.28858
+WH02,Regional Distribution Centre 2,3370,138888,22.36462,87.96391
+WH03,Regional Distribution Centre 3,3143,98451,10.09543,77.37612
+WH04,Regional Distribution Centre 4,2733,173173,29.19078,78.11259
+WH05,Regional Distribution Centre 5,2722,132290,24.29161,79.74767
+WH06,Regional Distribution Centre 6,3531,137536,27.45219,75.12628
+WH07,Regional Distribution Centre 7,2063,123933,17.36315,74.1437
+WH08,Regional Distribution Centre 8,3224,104167,32.76745,79.84913
+WH09,Regional Distribution Centre 9,2282,182310,30.82803,75.744
+WH10,Regional Distribution Centre 10,2078,167064,27.95959,83.05193
+WH11,Regional Distribution Centre 11,2900,152605,13.36597,79.21301
+WH12,Regional Distribution Centre 12,3753,127253,20.16803,85.73919
+WH13,Regional Distribution Centre 13,3297,171389,9.59509,83.55437
+WH14,Regional Distribution Centre 14,3346,142270,12.35724,77.15405
+WH15,Regional Distribution Centre 15,3263,131558,25.57622,85.73229
