@@ -8,3 +8,4 @@ results/*.json
 !results/econometric_scenarios.csv
 !results/.gitkeep
 
+*.zip
