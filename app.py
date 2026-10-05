@@ -859,7 +859,7 @@ with st.sidebar:
         run = st.form_submit_button(
             action_label, type="primary", width="stretch"
         )
-    st.caption("Exact MILP solve · Gurobi first · SCIP fallback")
+    st.caption("Exact MILP solve · Gurobi → SCIP → HiGHS cloud fallback")
 
 run_completed = False
 if run or "result" not in st.session_state:
@@ -979,7 +979,7 @@ st.markdown(
         </div>
         <div class="scx-meta-row">
             <span>Model · Exact MILP</span><span class="scx-meta-separator">•</span><span>Mode · {escape(decision_mode)}</span>
-            <div class="scx-tech-row"><span class="scx-tech">Pyomo</span><span class="scx-tech">Gurobi</span><span class="scx-tech">SCIP</span><span class="scx-tech">Streamlit</span><span class="scx-tech">Statsmodels</span></div>
+            <div class="scx-tech-row"><span class="scx-tech">Pyomo</span><span class="scx-tech">Gurobi</span><span class="scx-tech">SCIP</span><span class="scx-tech">HiGHS</span><span class="scx-tech">Streamlit</span><span class="scx-tech">Statsmodels</span></div>
         </div>
     </section>
     """,
@@ -1961,7 +1961,7 @@ st.markdown(
     """
     <footer class="scx-footer">
         <div><strong>SupplyChainX</strong> · Operations Research &amp; Decision Analytics<br>Built by Sayak Pranab Ghosh</div>
-        <div>Pyomo · Gurobi · SCIP · Streamlit · Statsmodels</div>
+        <div>Pyomo · Gurobi · SCIP · HiGHS · Streamlit · Statsmodels</div>
     </footer>
     """,
     unsafe_allow_html=True,
