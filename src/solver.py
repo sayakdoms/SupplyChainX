@@ -34,11 +34,11 @@ def solve_model(
     demand_zones: pd.DataFrame,
     tee: bool = False,
 ) -> OptimizationResult:
-    """Solve a constructed model using Gurobi first and SCIP as fallback."""
+    """Solve a constructed model using Gurobi, SCIP, then HiGHS as a portable fallback."""
     errors: list[str] = []
     solver_name = ""
     raw = None
-    for candidate in ("gurobi", "scip"):
+    for candidate in ("gurobi", "scip", "appsi_highs"):
         try:
             solver = SolverFactory(candidate)
             if solver is None or not solver.available(exception_flag=False):
