@@ -2,6 +2,11 @@
 
 **Multi-Warehouse Distribution & Network Optimization**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://supplychainx-optimization.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/Repository-GitHub-181717?logo=github)](https://github.com/sayakdoms/SupplyChainX)
+
+> **Live application:** [Launch SupplyChainX](https://supplychainx-optimization.streamlit.app/)
+
 SupplyChainX is a reproducible mixed-integer optimization project for deciding which warehouses to operate and how much to ship from each active warehouse to every demand zone. It is designed as an intermediate-level portfolio project: realistic enough to demonstrate operations-research practice, while remaining easy to understand and extend.
 
 ## Business problem
@@ -205,6 +210,7 @@ The repository is structured for direct Community Cloud deployment:
 - **Recommended Python:** 3.12
 - **Secrets:** none required for the current public demo
 - **Hosted solver:** HiGHS via `highspy` when Gurobi/SCIP are unavailable
+- **Live demo:** https://supplychainx-optimization.streamlit.app/
 
 Because `requirements.txt` and `.streamlit/config.toml` are both stored at the repository root, Community Cloud can install the Python dependencies and apply the dashboard theme automatically.
 
