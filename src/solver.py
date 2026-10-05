@@ -45,7 +45,7 @@ def solve_model(
                 errors.append(f"{candidate}: unavailable")
                 continue
             raw = solver.solve(model, tee=tee)
-            solver_name = candidate
+            solver_name = "highs" if candidate == "appsi_highs" else candidate
             break
         except Exception as exc:  # pragma: no cover - depends on local solver setup
             errors.append(f"{candidate}: {exc}")
