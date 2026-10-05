@@ -4,5 +4,4 @@ pyomo>=6.7,<7
 plotly>=5.18,<7
 streamlit>=1.32,<2
 statsmodels>=0.14,<1
-pytest>=8,<10
-
+pytest>=8,<10\nhighspy>=1.7,<2\n
