@@ -1972,7 +1972,7 @@ with tab_econometrics:
 st.markdown(
     """
     <footer class="scx-footer">
-        <div><strong>SupplyChainX</strong> · Operations Research &amp; Decision Analytics<br>Built by Sayak Pranab Ghosh · <a href="https://github.com/sayakdoms/SupplyChainX" target="_blank">GitHub</a> · <a href="https://supplychainx-optimization.streamlit.app/" target="_blank">Live Demo</a></div>
+        <div><strong>SupplyChainX</strong> · Operations Research &amp; Decision Analytics<br>Built by Sayak Pranab Ghosh · <a href="https://github.com/sayakdoms/SupplyChainX" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/sayakiitr2456/" target="_blank">LinkedIn</a> · <a href="https://supplychainx-optimization.streamlit.app/" target="_blank">Live Demo</a></div>
         <div>Pyomo · Gurobi · SCIP · HiGHS · Streamlit · Statsmodels</div>
     </footer>
     """,
