@@ -48,7 +48,7 @@ SupplyChainX/
 ├── src/
 │   ├── data_generator.py          Synthetic network generation
 │   ├── optimization_model.py      Pure Pyomo model construction
-│   ├── solver.py                  Gurobi → SCIP solver cascade
+│   ├── solver.py                  Gurobi → SCIP → HiGHS solver cascade
 │   ├── scenario_engine.py         What-if transformations
 │   ├── analytics.py               Cost and service KPIs
 │   └── visualizations.py          Plotly chart factory functions
@@ -124,10 +124,11 @@ pip install -r requirements.txt
 
 SupplyChainX checks solvers in this order:
 
-1. **Gurobi** via `gurobi_cl` (primary). Install Gurobi and configure a valid license.
-2. **SCIP** via `scip` (fallback). Install the SCIP Optimization Suite and place the executable on `PATH`.
+1. **Gurobi** (preferred local solver). Install Gurobi and configure a valid license.
+2. **SCIP** (local fallback). Install the SCIP Optimization Suite and place the executable on `PATH`.
+3. **HiGHS** through Pyomo's `appsi_highs` interface (portable/cloud fallback). The `highspy` Python package is installed from `requirements.txt`, so Streamlit Community Cloud does not need a separate solver executable or commercial license.
 
-Confirm availability with `gurobi_cl --version` or `scip --version`.
+Confirm local availability with `gurobi_cl --version` or `scip --version`. On hosted deployments, SupplyChainX automatically falls back to HiGHS when Gurobi and SCIP are unavailable.
 
 ## Usage
 
@@ -194,6 +195,19 @@ The dashboard's **Econometric Insights** tab reports an HC3-robust OLS response 
 
 > **Interpretation boundary:** This is a simulation-response / surrogate modelling exercise using synthetic data, not a causal empirical study of observed firms. Coefficients and significance measures describe relationships created inside the SupplyChainX experimental environment. They should not be presented as real-world causal effects.
 
+## Streamlit Community Cloud deployment
+
+The repository is structured for direct Community Cloud deployment:
+
+- **Repository:** `sayakdoms/SupplyChainX`
+- **Branch:** `main`
+- **Entrypoint:** `app.py`
+- **Recommended Python:** 3.12
+- **Secrets:** none required for the current public demo
+- **Hosted solver:** HiGHS via `highspy` when Gurobi/SCIP are unavailable
+
+Because `requirements.txt` and `.streamlit/config.toml` are both stored at the repository root, Community Cloud can install the Python dependencies and apply the dashboard theme automatically.
+
 ## Future improvements
 
 - multi-period inventory and replenishment decisions;
@@ -201,7 +215,7 @@ The dashboard's **Econometric Insights** tab reports an HC3-robust OLS response 
 - carbon-emission pricing and service-time constraints;
 - stochastic demand or robust optimization;
 - lane capacities and multiple transport modes;
-- persistent scenario storage and cloud deployment.
+- persistent scenario storage and authenticated multi-user deployment.
 
 ## License
 
